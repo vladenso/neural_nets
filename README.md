@@ -1,1 +1,1 @@
-# neural_nets
+neural nets for recognition of hand writen digits. 
