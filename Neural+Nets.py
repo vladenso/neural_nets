@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 
 
 # In[2]:
-
+# Load Data
 Data = sp.loadmat("letters_data.mat")
 
 
@@ -25,7 +25,7 @@ Test = Data['test_x']
 
 
 # In[4]:
-
+# Shuffle the data
 l = list(range(len(Y)))
 shuffle(l)
 x, y = [], [] 
@@ -37,7 +37,7 @@ Y = y
 
 
 # In[5]:
-
+# Scaling and normilizing training and test data
 ss = StandardScaler()
 X.extend(Test)
 
@@ -47,7 +47,7 @@ X, Test = X[:len(Y)], X[len(Y):]
 
 
 # In[6]:
-
+# One hot encoding test outputs
 Y_hot_enc = []
 for y in Y:
     yhe = np.array([0]*26)
@@ -57,7 +57,7 @@ Y = Y_hot_enc
 
 
 # In[7]:
-
+# Bias term for input
 o = [1]*len(X)
 X = np.column_stack((X, o))
 o = [1]*len(Test)
